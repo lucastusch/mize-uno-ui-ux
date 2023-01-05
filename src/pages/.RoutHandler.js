@@ -9,14 +9,16 @@ import Game from './Game'
 
 const RoutHandler = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='*' element={<Errors />} />
-        <Route path='/' element={<Landing />} />
-        <Route path='/' element={<Game />} />
-        <Route path='/testing' element={<Testing />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='*' element={<Errors />} />
+          <Route path='/' element={<Landing />} />
+          <Route path='/game' element={<Game />} />
+          <Route path='/testing' element={<Testing />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
 

@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+//import { useState } from 'react'
 //import { Link } from 'react-router-dom'
 
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const Landing = () => {
-  const [lobbyid, setLobbyID] = useState(1)
+  //const [lobbyid, setLobbyID] = useState(1)
   /*
   //same function as the clickhandler below
   const clickHandler = () => {
@@ -40,9 +41,13 @@ const Landing = () => {
 */
 
   return (
-    <section className=''>
-      <Navbar />
-    </section>
+    <>
+      <section>
+        <Navbar />
+        <div>Hello World</div>
+        <Footer />
+      </section>
+    </>
   )
 }
 

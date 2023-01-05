@@ -9,17 +9,17 @@ const Navbar = () => {
           <div className='px-2 flex justify-between items-center w-full h-full'>
             <div className='flex items-center mx-40'>
               <img src={unologo} alt='logo' className='h-16 w-24' />{' '}
-              <h1 className='pl-10 text-3xl font-bold mr-4 sm:text-4xl drop-shadow-md hover:'>
+              <div className='pl-10 text-3xl font-extrabold mr-4 sm:text-4xl drop-shadow-md tracking-tight'>
                 <span>WELCOME TO UNO</span>
                 {'-'}
                 <span className='underline'>ONLINE</span>
-              </h1>
+              </div>
             </div>
             <div className='pr-40'>
-              <button className='border-none bg-transparent text-black mr-4'>
+              <button className='font-semibold px-5 py-2 rounded-md  text-blue-500 hover:text-blue-600 bg-slate-200 hover:bg-slate-300 drop-shadow-md hover:drop-shadow-lg duration-300 bg-transparent mr-4'>
                 <Link to='/signin'>Sign In</Link>
               </button>
-              <button className='px-5 py-2 rounded-md bg-violet-500 hover:bg-violet-600 drop-shadow-md hover:drop-shadow-lg active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300'>
+              <button className='font-semibold px-5 py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600 drop-shadow-md hover:drop-shadow-lg duration-300 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300'>
                 <Link to='/signup'>Sign Up</Link>
               </button>
             </div>
