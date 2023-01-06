@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-scroll'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -139,7 +140,11 @@ const Landing = () => {
                     </span>
                     <br />
                     <button className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'>
-                      <span className='text-white'>PLAY NOW</span>
+                      <span className='text-white'>
+                        <Link to='lobbys' smooth={true} duration={500}>
+                          PLAY NOW
+                        </Link>
+                      </span>
                     </button>
                   </h1>
                 </div>
@@ -173,7 +178,9 @@ const Landing = () => {
               />
             </svg>
           </span>
-          <span className='px-2 font-bold text-3xl'>AVAILABLE LOBBYS</span>
+          <span name='lobbys' className='px-2 font-bold text-3xl'>
+            AVAILABLE LOBBYS
+          </span>
           <span>
             <svg
               xmlns='http://www.w3.org/2000/svg'
