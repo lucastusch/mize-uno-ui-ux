@@ -30,16 +30,6 @@ const Landing = () => {
   //   })
   // }
 
-  // const [search, setSearch] = useState('')
-  // const data = [
-  //   {
-  //     id: 1,
-  //     lobbyname: 'lucassewi-uno',
-  //     lobbyid: '#00000',
-  //     currentplayerfrommax: '2/8',
-  //     host: 'lucassewi',
-  //   },
-  // ]
   const [search, setSearch] = useState('')
 
   //just as an example [sewi backend]
@@ -58,7 +48,65 @@ const Landing = () => {
       host: 'lucas',
       currentplayermax: '2/8',
     },
+    {
+      id: 3,
+      lobbycode: '#0003',
+      lobbyname: 'annas uno',
+      host: 'anna',
+      currentplayermax: '3/8',
+    },
+    {
+      id: 4,
+      lobbycode: '#0004',
+      lobbyname: 'lucies uno',
+      host: 'lucie',
+      currentplayermax: '4/8',
+    },
+    {
+      id: 5,
+      lobbycode: '#0005',
+      lobbyname: 'amelies uno',
+      host: 'amelie',
+      currentplayermax: '5/8',
+    },
   ]
+
+  const FilterHandler = (props) => {
+    const items = props.props
+    if (items.id % 2 === 0) {
+      return (
+        <tr key={items.id} className='flex flex-wrap justify-center w-full'>
+          <td className='bg-red-200 font-normal w-1/6 border'>
+            {items.lobbycode}
+          </td>
+          <td className='bg-red-200 font-normal w-1/4 border'>
+            {items.lobbyname}
+          </td>
+          <td className='bg-red-200 font-normal w-1/6 border'>{items.host}</td>
+          <td className='bg-red-200 font-normal w-1/6 border'>
+            {items.currentplayermax}
+          </td>
+        </tr>
+      )
+    } else {
+      return (
+        <tr key={items.id} className='flex flex-wrap justify-center w-full'>
+          <td className='bg-yellow-100 font-normal w-1/6 border'>
+            {items.lobbycode}
+          </td>
+          <td className='bg-yellow-100 font-normal w-1/4 border'>
+            {items.lobbyname}
+          </td>
+          <td className='bg-yellow-100 font-normal w-1/6 border'>
+            {items.host}
+          </td>
+          <td className='bg-yellow-100 font-normal w-1/6 border'>
+            {items.currentplayermax}
+          </td>
+        </tr>
+      )
+    }
+  }
 
   return (
     <>
@@ -145,38 +193,40 @@ const Landing = () => {
         </div>
 
         <article>
-          <div className='px-40'>
+          <div className='px-40 pt-10 pb-20'>
             <div>
               <div>
-                <div className='my-3'>
+                <div className='flex flex-wrap justify-center w-full pb-2'>
+                  {/* Search option just for Lobby-Name */}
                   <input
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder='Search contacts'
+                    placeholder='Search'
+                    className='w-1/6 rounded-md pl-2 drop-shadow-sm border-2 shadow-sm'
                   />
+                  <div className='w-7/12' />
                 </div>
               </div>
-              <div className='w-full'>
-                <th className='w-1/4'>Lobby-Code</th>
-                <th classname='w-1/4'>Lobby-Name</th>
-                <th className='w-1/4'>Host</th>
-                <th className='w-1/4'>Player</th>
-
-                <tbody>
-                  {data
-                    .filter((item) => {
-                      return search.toLowerCase() === ''
-                        ? item
-                        : item.lobbyname.toLowerCase().includes(search)
-                    })
-                    .map((item, index) => (
-                      <tr key={index}>
-                        <td>{item.lobbycode}</td>
-                        <td>{item.lobbyname}</td>
-                        <td>{item.host}</td>
-                        <td>{item.currentplayermax}</td>
-                      </tr>
-                    ))}
-                </tbody>
+              <table className='w-full'>
+                <tr className='flex flex-wrap justify-center'>
+                  {/* <td> & 'font-bold' is just a temporary solution (couldn't figure out why it doesn't work with <th>) */}
+                  <td className='w-1/6 font-bold border'>Lobby-Code</td>
+                  <td className='w-1/4 font-bold border'>Lobby-Name</td>
+                  <td className='w-1/6 font-bold border'>Host</td>
+                  <td className='w-1/6 font-bold border'>Player</td>
+                </tr>
+              </table>
+              <div>
+                {data
+                  .filter((item) => {
+                    return search.toLowerCase() === ''
+                      ? item
+                      : item.lobbyname.toLowerCase().includes(search)
+                  })
+                  .map((item) => (
+                    <>
+                      <FilterHandler props={item} />
+                    </>
+                  ))}
               </div>
             </div>
           </div>

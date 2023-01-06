@@ -1,6 +1,6 @@
 # Getting Started with UNO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [tailwindcss](https://github.com/tailwindlabs/tailwindcss).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [TailwindCSS](https://github.com/tailwindlabs/tailwindcss).
 
 ## Available Scripts
 
@@ -43,7 +43,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [ReactJS documentation](https://reactjs.org/).
+To learn TailwindCSS, check out the [TailwindCSS documentation](https://tailwindcss.com/).
 
 ### Code Splitting
 

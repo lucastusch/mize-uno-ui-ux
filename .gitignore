@@ -1,4 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Type in "npm i" to install the remaining files.
 
 # dependencies
 /node_modules
