@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
-//test comment
+//test2
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
