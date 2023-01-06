@@ -1,50 +1,69 @@
-//import { useState } from 'react'
-//import { Link } from 'react-router-dom'
-import unoongoinggame from '../assets/uno-ongoing-game.jpg'
+import { useState } from 'react'
 
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
+import unoongoinggame from '../assets/uno-ongoing-game.jpg'
+
 const Landing = () => {
-  /*
-  const [lobbyid, setLobbyID] = useState(1)
-  
-  //same function as the clickhandler below
-  const clickHandler = () => {
-    setLobbyID((prevState) => {
-      prevState = lobbyid + 1
-      return prevState
-    })
-  }
+  // //just playing around
 
-  
-  //same function as the clickhandler above
-  const clickHandler = () => {
-    setLobbyID(lobbyid + 1)
-  }
+  // const [lobbyid, setLobbyID] = useState(1)
+  // const [activeplayers, setActivePlayers] = useState(1)
 
+  // const lobbyHandler = () => {
+  //   setLobbyID((prevState) => {
+  //     prevState = lobbyid + 1
+  //     return prevState
+  //   })
+  // }
 
-  //<Link to={`/game/${lobbyid}`}>Lobby-{lobbyid}</Link>
+  // const activePlayersHandler = () => {
+  //   setActivePlayers((prevState) => {
+  //     if (activeplayers < 10) {
+  //       prevState = activeplayers + 1
+  //       return prevState
+  //     } else {
+  //       prevState = activeplayers
+  //       return prevState
+  //     }
+  //   })
+  // }
 
-  
-   <h1 className='text-3xl font-bold mb-10'>Welcome to !UNO</h1>
-      <h2 className='text-2xl font-bold'>Server-List</h2>
-      <ol className='list-disc'>
-        <li className='ml-5'>
-          <button
-            className='hover:underline'
-            type='button'
-            //onClick={() => clickHandler()}
-          >
-            Lobby-{lobbyid}
-          </button>
-        </li>
-      </ol>
-  */
+  // const [search, setSearch] = useState('')
+  // const data = [
+  //   {
+  //     id: 1,
+  //     lobbyname: 'lucassewi-uno',
+  //     lobbyid: '#00000',
+  //     currentplayerfrommax: '2/8',
+  //     host: 'lucassewi',
+  //   },
+  // ]
+  const [search, setSearch] = useState('')
+
+  //just as an example [sewi backend]
+  const data = [
+    {
+      id: 1,
+      lobbycode: '#0001',
+      lobbyname: 'sewis uno',
+      host: 'sewi',
+      currentplayermax: '1/8',
+    },
+    {
+      id: 2,
+      lobbycode: '#0002',
+      lobbyname: 'lucas uno',
+      host: 'lucas',
+      currentplayermax: '2/8',
+    },
+  ]
 
   return (
     <>
       <Navbar />
+      {/* Hero */}
       <main>
         <div className='text-center relative bg-white overflow-hidden'>
           <div className='max-w-7xl mx-auto'>
@@ -86,6 +105,84 @@ const Landing = () => {
           </div>
         </div>
       </main>
+
+      {/* Lobby-list */}
+      <section>
+        <div className='flex flex-wrap justify-center'>
+          <span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-9 h-9'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19.5 12h-15'
+              />
+            </svg>
+          </span>
+          <span className='px-2 font-bold text-3xl'>AVAILABLE LOBBYS</span>
+          <span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth={1.5}
+              stroke='currentColor'
+              className='w-9 h-9'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M19.5 12h-15'
+              />
+            </svg>
+          </span>
+        </div>
+
+        <article>
+          <div className='px-40'>
+            <div>
+              <div>
+                <div className='my-3'>
+                  <input
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder='Search contacts'
+                  />
+                </div>
+              </div>
+              <div className='w-full'>
+                <th className='w-1/4'>Lobby-Code</th>
+                <th classname='w-1/4'>Lobby-Name</th>
+                <th className='w-1/4'>Host</th>
+                <th className='w-1/4'>Player</th>
+
+                <tbody>
+                  {data
+                    .filter((item) => {
+                      return search.toLowerCase() === ''
+                        ? item
+                        : item.lobbyname.toLowerCase().includes(search)
+                    })
+                    .map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.lobbycode}</td>
+                        <td>{item.lobbyname}</td>
+                        <td>{item.host}</td>
+                        <td>{item.currentplayermax}</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <Footer />
     </>
   )

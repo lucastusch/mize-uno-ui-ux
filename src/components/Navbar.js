@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <div className='w-screen h-20 z-10 bg-white'>
-          <div className='px-2 flex justify-between items-center w-full h-full'>
+        <div className='w-full h-20 z-10 bg-white'>
+          <div className='flex justify-between items-center w-full h-full'>
             <div className='flex items-center mx-40'>
               <img src={unologo} alt='logo' className='h-16 w-24' />{' '}
               <div className='pl-10 text-3xl font-extrabold mr-4 sm:text-4xl drop-shadow-md tracking-tight'>
