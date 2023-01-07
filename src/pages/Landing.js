@@ -153,7 +153,11 @@ const Landing = () => {
           </div>
           <div className='pb-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
             <div>
-              <img src={unoongoinggame} alt='ongoing uno game' />
+              <img
+                src={unoongoinggame}
+                alt='ongoing uno game'
+                className='h-full w-full'
+              />
             </div>
           </div>
         </div>

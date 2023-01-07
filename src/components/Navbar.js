@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='w-full h-20 z-10 bg-white'>
           <div className='flex justify-between items-center w-full h-full'>
             <div className='flex items-center mx-40'>
-              <img src={unologo} alt='logo' className='h-16 w-24' />{' '}
+              <img src={unologo} alt='logo' className='h-16 w-[h*1.43]' />{' '}
               <Navbarscrolls highlighted='lobbys' />
             </div>
             <div className='pr-40'>
