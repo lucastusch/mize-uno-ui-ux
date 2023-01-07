@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className='flex justify-between items-center w-full h-full'>
             <div className='flex items-center mx-40'>
               <img src={unologo} alt='logo' className='h-16 w-[h*1.43]' />{' '}
-              <Navbarscrolls highlighted='lobbys' />
+              <Navbarscrolls highlighted='games' />
             </div>
             <div className='pr-40'>
               <button className='font-semibold px-5 py-2 rounded-md  text-blue-500 bg-slate-200 hover:text-white hover:bg-blue-500 duration-500 drop-shadow-md hover:drop-shadow-lg  bg-transparent mr-4'>
