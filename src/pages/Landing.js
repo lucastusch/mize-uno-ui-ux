@@ -37,36 +37,36 @@ const Landing = () => {
   const data = [
     {
       id: 1,
-      lobbycode: '#0001',
-      lobbyname: 'sewis uno',
+      gamecode: '#0001',
+      gamename: 'sewis uno',
       host: 'sewi',
       currentplayermax: '1/8',
     },
     {
       id: 2,
-      lobbycode: '#0002',
-      lobbyname: 'lucas uno',
+      gamecode: '#0002',
+      gamename: 'lucas uno',
       host: 'lucas',
       currentplayermax: '2/8',
     },
     {
       id: 3,
-      lobbycode: '#0003',
-      lobbyname: 'annas uno',
+      gamecode: '#0003',
+      gamename: 'annas uno',
       host: 'anna',
       currentplayermax: '3/8',
     },
     {
       id: 4,
-      lobbycode: '#0004',
-      lobbyname: 'lucies uno',
+      gamecode: '#0004',
+      gamename: 'lucies uno',
       host: 'lucie',
       currentplayermax: '4/8',
     },
     {
       id: 5,
-      lobbycode: '#0005',
-      lobbyname: 'amelies uno',
+      gamecode: '#0005',
+      gamename: 'amelies uno',
       host: 'amelie',
       currentplayermax: '5/8',
     },
@@ -78,10 +78,10 @@ const Landing = () => {
       return (
         <tr key={items.id} className='flex flex-wrap justify-center w-full'>
           <td className='bg-red-200 font-normal w-1/6 border'>
-            {items.lobbycode}
+            {items.gamecode}
           </td>
           <td className='bg-red-200 font-normal w-1/4 border'>
-            {items.lobbyname}
+            {items.gamename}
           </td>
           <td className='bg-red-200 font-normal w-1/6 border'>{items.host}</td>
           <td className='bg-red-200 font-normal w-1/6 border'>
@@ -93,10 +93,10 @@ const Landing = () => {
       return (
         <tr key={items.id} className='flex flex-wrap justify-center w-full'>
           <td className='bg-yellow-100 font-normal w-1/6 border'>
-            {items.lobbycode}
+            {items.gamecode}
           </td>
           <td className='bg-yellow-100 font-normal w-1/4 border'>
-            {items.lobbyname}
+            {items.gamename}
           </td>
           <td className='bg-yellow-100 font-normal w-1/6 border'>
             {items.host}
@@ -141,7 +141,7 @@ const Landing = () => {
                     <br />
                     <button className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'>
                       <span className='text-white'>
-                        <Link to='lobbys' smooth={true} duration={500}>
+                        <Link to='games' smooth={true} duration={500}>
                           PLAY NOW
                         </Link>
                       </span>
@@ -153,7 +153,11 @@ const Landing = () => {
           </div>
           <div className='pb-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2'>
             <div>
-              <img src={unoongoinggame} alt='ongoing uno game' />
+              <img
+                src={unoongoinggame}
+                alt='ongoing uno game'
+                className='h-full w-full'
+              />
             </div>
           </div>
         </div>
@@ -178,8 +182,8 @@ const Landing = () => {
               />
             </svg>
           </span>
-          <span name='lobbys' className='px-2 font-bold text-3xl'>
-            AVAILABLE LOBBYS
+          <span name='games' className='px-2 font-bold text-3xl'>
+            AVAILABLE GAMES
           </span>
           <span>
             <svg
@@ -216,8 +220,8 @@ const Landing = () => {
               <table className='w-full'>
                 <tr className='flex flex-wrap justify-center'>
                   {/* <td> & 'font-bold' is just a temporary solution (couldn't figure out why it doesn't work with <th>) */}
-                  <td className='w-1/6 font-bold border'>Lobby-Code</td>
-                  <td className='w-1/4 font-bold border'>Lobby-Name</td>
+                  <td className='w-1/6 font-bold border'>Game-Code</td>
+                  <td className='w-1/4 font-bold border'>Game-Name</td>
                   <td className='w-1/6 font-bold border'>Host</td>
                   <td className='w-1/6 font-bold border'>Player</td>
                 </tr>
@@ -227,7 +231,7 @@ const Landing = () => {
                   .filter((item) => {
                     return search.toLowerCase() === ''
                       ? item
-                      : item.lobbyname.toLowerCase().includes(search)
+                      : item.gamename.toLowerCase().includes(search)
                   })
                   .map((item) => (
                     <>
