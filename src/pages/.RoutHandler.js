@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Testing from './Testing'
 import Landing from './Landing'
 import Errors from './Errors'
+import Lobby from './Lobby'
 import Game from './Game'
 
 const RoutHandler = () => {
@@ -14,6 +15,7 @@ const RoutHandler = () => {
         <Routes>
           <Route path='*' element={<Errors />} />
           <Route path='/' element={<Landing />} />
+          <Route path='/lobby' element={<Lobby />} />
           <Route path='/game' element={<Game />} />
           <Route path='/testing' element={<Testing />} />
         </Routes>

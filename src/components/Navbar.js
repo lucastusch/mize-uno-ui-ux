@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Navbarscrolls from './Navbarscrolls'
 import unologo from '../assets/uno-logo.png'
 
 const Navbar = () => {
@@ -9,11 +10,7 @@ const Navbar = () => {
           <div className='flex justify-between items-center w-full h-full'>
             <div className='flex items-center mx-40'>
               <img src={unologo} alt='logo' className='h-16 w-24' />{' '}
-              <div className='pl-10 text-3xl font-extrabold mr-4 sm:text-4xl drop-shadow-md tracking-tight'>
-                <span>WELCOME TO UNO</span>
-                {'-'}
-                <span className='underline'>ONLINE</span>
-              </div>
+              <Navbarscrolls highlighted='lobbys' />
             </div>
             <div className='pr-40'>
               <button className='font-semibold px-5 py-2 rounded-md  text-blue-500 bg-slate-200 hover:text-white hover:bg-blue-500 duration-500 drop-shadow-md hover:drop-shadow-lg  bg-transparent mr-4'>
