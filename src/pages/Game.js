@@ -1,6 +1,7 @@
-import gamebg from '../assets/game-background.png'
-
 // just a temporary solution - want to handle this dynamic
+const gamebg =
+  'https://1.bp.blogspot.com/-CUGrjTz--uk/YKexcWh29nI/AAAAAAAAh4M/HslKXMPNl7AI42WH7sNMKMgjkS_KJLSoQCLcBGAsYHQ/s1920/V1-CUTE-TROPICAL-DESKTOP-WALLPAPER-HD.png'
+
 const PlayerHandler = (props) => {
   if (props.playercount === 2) {
     return (
