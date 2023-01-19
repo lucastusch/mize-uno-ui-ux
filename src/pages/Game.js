@@ -7,22 +7,52 @@ const data = [
   {
     id: 1,
     player_name: 'lucas',
-    player_cards: ['red_5', 'blue_2', 'green_0'],
+    player_cards: ['yellow_5', 'green_0'],
     player_active: 'no',
   },
   {
     id: 2,
     player_name: 'sebastian',
     player_cards: ['red_1', 'blue_7', 'green_9'],
-    player_active: 'yes',
+    player_active: 'no',
   },
   {
     id: 3,
     player_name: 'sophia',
-    player_cards: ['red_3', 'blue_6', 'green_8'],
-    player_active: 'no',
+    player_cards: ['red_3', 'blue_6', 'green_8', 'yellow_1'],
+    player_active: 'yes',
   },
 ]
+
+const ActivePlayerCheck = () => {
+  let active_player = data.filter((item) => item.player_active === 'yes')
+  // console.log(active_player)
+  return (
+    <div>
+      {active_player[0].player_name}
+      {' ['}
+      {active_player[0].player_cards.length}
+      {']'}
+    </div>
+  )
+}
+
+const PlayerList = () => {
+  return (
+    <div>
+      {data.map((item) => {
+        return (
+          <div key={item.id}>
+            {item.player_name}
+            {' ['}
+            {item.player_cards.length}
+            {']'}
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
 const Game = () => {
   return (
@@ -36,9 +66,10 @@ const Game = () => {
         />
         <div className='absolute text-3xl text-amber-400 top-8 left-8 -translate-y-1/2'>
           Top Left: list of players
+          <PlayerList />
         </div>
         <div className='absolute text-3xl text-amber-400 top-8 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          Top Center: current active player
+          <ActivePlayerCheck />
         </div>
         <div className='absolute text-3xl text-amber-400 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
           Center: current card
