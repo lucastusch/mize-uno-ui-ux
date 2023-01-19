@@ -7,6 +7,84 @@ import Footer from '../components/Footer'
 const unoongoinggame =
   'https://www.thesprucecrafts.com/thmb/W7vX1ntLjL6UksyxBXmFFIcB4Ak=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-play-uno-4169919-hero-2c26a4843b9d4d908e760df80687e445.jpg'
 
+const searchlens = (
+  <svg
+    aria-hidden='true'
+    className='w-5 h-5 text-gray-500 dark:text-gray-400'
+    fill='currentColor'
+    viewBox='0 0 20 20'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      fillRule='evenodd'
+      d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
+      clipRule='evenodd'
+    />
+  </svg>
+)
+
+const hyphen = (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    fill='none'
+    viewBox='0 0 24 24'
+    strokeWidth={1.5}
+    stroke='currentColor'
+    className='w-9 h-9'
+  >
+    <path strokeLinecap='round' strokeLinejoin='round' d='M19.5 12h-15' />
+  </svg>
+)
+
+const FilterHandler = (props) => {
+  const items = props.props
+  if (items.id % 2 === 0) {
+    return (
+      // strange solution => must appear as a table
+      <table key={items.id} className='flex flex-wrap justify-center w-full'>
+        <tbody key={items.id} className='flex flex-wrap justify-center w-full'>
+          <tr key={items.id} className='flex flex-wrap justify-center w-full'>
+            <td className='bg-red-200 font-normal w-1/6 border py-1'>
+              {items.gamecode}
+            </td>
+            <td className='bg-red-200 font-normal w-1/4 border py-1'>
+              {items.gamename}
+            </td>
+            <td className='bg-red-200 font-normal w-1/6 border py-1'>
+              {items.host}
+            </td>
+            <td className='bg-red-200 font-normal w-1/6 border py-1'>
+              {items.currentplayermax}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    )
+  } else {
+    // strange solution => must appear as a table
+    return (
+      <table key={items.id} className='flex flex-wrap justify-center w-full'>
+        <tbody key={items.id} className='flex flex-wrap justify-center w-full'>
+          <tr key={items.id} className='flex flex-wrap justify-center w-full'>
+            <td className='bg-yellow-100 font-normal w-1/6 border py-1'>
+              {items.gamecode}
+            </td>
+            <td className='bg-yellow-100 font-normal w-1/4 border py-1'>
+              {items.gamename}
+            </td>
+            <td className='bg-yellow-100 font-normal w-1/6 border py-1'>
+              {items.host}
+            </td>
+            <td className='bg-yellow-100 font-normal w-1/6 border py-1'>
+              {items.currentplayermax}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    )
+  }
+}
+
 const Landing = () => {
   // //just playing around
 
@@ -73,43 +151,6 @@ const Landing = () => {
     },
   ]
 
-  const FilterHandler = (props) => {
-    const items = props.props
-    if (items.id % 2 === 0) {
-      return (
-        <tr key={items.id} className='flex flex-wrap justify-center w-full'>
-          <td className='bg-red-200 font-normal w-1/6 border'>
-            {items.gamecode}
-          </td>
-          <td className='bg-red-200 font-normal w-1/4 border'>
-            {items.gamename}
-          </td>
-          <td className='bg-red-200 font-normal w-1/6 border'>{items.host}</td>
-          <td className='bg-red-200 font-normal w-1/6 border'>
-            {items.currentplayermax}
-          </td>
-        </tr>
-      )
-    } else {
-      return (
-        <tr key={items.id} className='flex flex-wrap justify-center w-full'>
-          <td className='bg-yellow-100 font-normal w-1/6 border'>
-            {items.gamecode}
-          </td>
-          <td className='bg-yellow-100 font-normal w-1/4 border'>
-            {items.gamename}
-          </td>
-          <td className='bg-yellow-100 font-normal w-1/6 border'>
-            {items.host}
-          </td>
-          <td className='bg-yellow-100 font-normal w-1/6 border'>
-            {items.currentplayermax}
-          </td>
-        </tr>
-      )
-    }
-  }
-
   return (
     <>
       <Navbar />
@@ -167,41 +208,11 @@ const Landing = () => {
       {/* Lobby-list */}
       <section>
         <div className='flex flex-wrap justify-center'>
-          <span>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              strokeWidth={1.5}
-              stroke='currentColor'
-              className='w-9 h-9'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='M19.5 12h-15'
-              />
-            </svg>
-          </span>
+          <span>{hyphen}</span>
           <span name='games' className='px-2 font-bold text-3xl'>
             AVAILABLE GAMES
           </span>
-          <span>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              strokeWidth={1.5}
-              stroke='currentColor'
-              className='w-9 h-9'
-            >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='M19.5 12h-15'
-              />
-            </svg>
-          </span>
+          <span>{hyphen}</span>
         </div>
 
         <article>
@@ -210,22 +221,33 @@ const Landing = () => {
               <div>
                 <div className='flex flex-wrap justify-center w-full pb-2'>
                   {/* Search option just for Lobby-Name */}
-                  <input
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder='Search'
-                    className='w-1/6 rounded-md pl-2 drop-shadow-sm border-2 shadow-sm'
-                  />
+                  <div className='relative w-1/6'>
+                    <div className='flex absolute inset-y-0 left-0 items-center pl-3'>
+                      {searchlens}
+                    </div>
+                    <input
+                      type='search'
+                      id='search'
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder='Search'
+                      className='p-2 pl-10 w-full text-sm font-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                      required
+                    />
+                  </div>
                   <div className='w-7/12' />
                 </div>
               </div>
+
               <table className='w-full'>
-                <tr className='flex flex-wrap justify-center'>
-                  {/* <td> & 'font-bold' is just a temporary solution (couldn't figure out why it doesn't work with <th>) */}
-                  <td className='w-1/6 font-bold border'>Game-Code</td>
-                  <td className='w-1/4 font-bold border'>Game-Name</td>
-                  <td className='w-1/6 font-bold border'>Host</td>
-                  <td className='w-1/6 font-bold border'>Player</td>
-                </tr>
+                <tbody>
+                  <tr className='flex flex-wrap justify-center'>
+                    {/* <td> & 'font-bold' is just a temporary solution (couldn't figure out why it doesn't work with <th>) */}
+                    <td className='w-1/6 font-bold border py-1'>Game-Code</td>
+                    <td className='w-1/4 font-bold border py-1'>Game-Name</td>
+                    <td className='w-1/6 font-bold border py-1'>Host</td>
+                    <td className='w-1/6 font-bold border py-1'>Player</td>
+                  </tr>
+                </tbody>
               </table>
               <div>
                 {data
@@ -235,16 +257,13 @@ const Landing = () => {
                       : item.gamename.toLowerCase().includes(search)
                   })
                   .map((item) => (
-                    <>
-                      <FilterHandler props={item} />
-                    </>
+                    <FilterHandler key={item.id} props={item} />
                   ))}
               </div>
             </div>
           </div>
         </article>
       </section>
-
       <Footer />
     </>
   )
