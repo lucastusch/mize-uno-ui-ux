@@ -181,7 +181,10 @@ const Landing = () => {
                       WITH YOUR FRIENDS
                     </span>
                     <br />
-                    <button className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'>
+                    <button
+                      type='button'
+                      className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'
+                    >
                       <span className='text-white'>
                         <Link to='games' smooth={true} duration={500}>
                           PLAY NOW
