@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from '../components-landing/Navbar'
+import Footer from '../components-landing/Footer'
 
 const unoongoinggame =
   'https://www.thesprucecrafts.com/thmb/W7vX1ntLjL6UksyxBXmFFIcB4Ak=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-play-uno-4169919-hero-2c26a4843b9d4d908e760df80687e445.jpg'
@@ -112,7 +112,7 @@ const Landing = () => {
 
   const [search, setSearch] = useState('')
 
-  //just as an example [sewi backend]
+  // just as an example [sewi backend]
   const data = [
     {
       id: 1,
@@ -181,7 +181,10 @@ const Landing = () => {
                       WITH YOUR FRIENDS
                     </span>
                     <br />
-                    <button className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'>
+                    <button
+                      type='button'
+                      className='py-3 px-2 bg-green-300 rounded-md font-bold text-2xl tracking-tighter shadow-lg hover:shadow-xl scale-90 hover:scale-100 duration-300'
+                    >
                       <span className='text-white'>
                         <Link to='games' smooth={true} duration={500}>
                           PLAY NOW
