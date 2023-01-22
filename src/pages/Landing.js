@@ -86,30 +86,6 @@ const FilterHandler = (props) => {
 }
 
 const Landing = () => {
-  // //just playing around
-
-  // const [lobbyid, setLobbyID] = useState(1)
-  // const [activeplayers, setActivePlayers] = useState(1)
-
-  // const lobbyHandler = () => {
-  //   setLobbyID((prevState) => {
-  //     prevState = lobbyid + 1
-  //     return prevState
-  //   })
-  // }
-
-  // const activePlayersHandler = () => {
-  //   setActivePlayers((prevState) => {
-  //     if (activeplayers < 10) {
-  //       prevState = activeplayers + 1
-  //       return prevState
-  //     } else {
-  //       prevState = activeplayers
-  //       return prevState
-  //     }
-  //   })
-  // }
-
   const [search, setSearch] = useState('')
 
   // just as an example [sewi backend]
