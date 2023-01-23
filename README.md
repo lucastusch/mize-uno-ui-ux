@@ -1,6 +1,6 @@
 # Getting Started with UNO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [TailwindCSS](https://github.com/tailwindlabs/tailwindcss).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) & [TailwindCSS](https://github.com/tailwindlabs/tailwindcss).\
 Note that this is just the UI for [mize-uno](https://github.com/sewimoser/mize-uno).
 
 ## Available Scripts
