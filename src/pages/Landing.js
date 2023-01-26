@@ -36,6 +36,20 @@ const hyphen = (
   </svg>
 )
 
+const hero_polygon = (
+  <svg
+    className='text-left hidden lg:block absolute right-[-10px] bot-[-150px] inset-y-0 text-white transform translate-x-1/2'
+    fill='currentColor'
+    viewBox='0 0 100 100'
+    preserveAspectRatio='none'
+    aria-hidden='true'
+    height='680px'
+    width='250px'
+  >
+    <polygon points='45,0 100,0 40,100 0,100' />
+  </svg>
+)
+
 const FilterHandler = (props) => {
   const items = props.props
   if (items.id % 2 === 0) {
@@ -135,17 +149,7 @@ const Landing = () => {
         <div className='text-center relative bg-white overflow-hidden'>
           <div className='max-w-7xl mx-auto'>
             <div className='pt-16 relative z-10 bg-white sm:pb-10 md:pb-10 lg:max-w-2xl lg:w-full lg:pb-14 xl:pb-40'>
-              <svg
-                className='text-left hidden lg:block absolute right-[-10px] bot-[-150px] inset-y-0 text-white transform translate-x-1/2'
-                fill='currentColor'
-                viewBox='0 0 100 100'
-                preserveAspectRatio='none'
-                aria-hidden='true'
-                height='680px'
-                width='250px'
-              >
-                <polygon points='45,0 100,0 40,100 0,100' />
-              </svg>
+              {hero_polygon}
               <article className='mb-20 md:mb-20 lg:mb-40  mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-10 lg:mt-10 lg:px-0 xl:mt-28'>
                 <div className='sm:text-center lg:text-left'>
                   <h1 className='text-3xl tracking-tight font-extrabold sm:text-5xl md:text-6xl'>
@@ -197,48 +201,45 @@ const Landing = () => {
         <article>
           <div className='px-40 pt-10 pb-20'>
             <div>
-              <div>
-                <div className='flex flex-wrap justify-center w-full pb-2'>
-                  {/* Search option just for Lobby-Name */}
-                  <div className='relative w-1/6'>
-                    <div className='flex absolute inset-y-0 left-0 items-center pl-3'>
-                      {searchlens}
-                    </div>
-                    <input
-                      type='search'
-                      id='search'
-                      onChange={(e) => setSearch(e.target.value)}
-                      placeholder='Search'
-                      className='p-2 pl-10 w-full text-sm font-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
-                      required
-                    />
+              <div className='flex flex-wrap justify-center w-full pb-2'>
+                {/* Search option just for Lobby-Name */}
+                <div className='relative w-1/6'>
+                  <div className='flex absolute inset-y-0 left-0 items-center pl-3'>
+                    {searchlens}
                   </div>
-                  <div className='w-7/12' />
+                  <input
+                    type='search'
+                    id='search'
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder='Search'
+                    className='p-2 pl-10 w-full text-sm font-medium text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500'
+                    required
+                  />
                 </div>
+                <div className='w-7/12' />
               </div>
+            </div>
 
-              <table className='w-full'>
-                <tbody>
-                  <tr className='flex flex-wrap justify-center'>
-                    {/* <td> & 'font-bold' is just a temporary solution (couldn't figure out why it doesn't work with <th>) */}
-                    <td className='w-1/6 font-bold border py-1'>Game-Code</td>
-                    <td className='w-1/4 font-bold border py-1'>Game-Name</td>
-                    <td className='w-1/6 font-bold border py-1'>Host</td>
-                    <td className='w-1/6 font-bold border py-1'>Player</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div>
-                {data
-                  .filter((item) => {
-                    return search.toLowerCase() === ''
-                      ? item
-                      : item.gamename.toLowerCase().includes(search)
-                  })
-                  .map((item) => (
-                    <FilterHandler key={item.id} props={item} />
-                  ))}
-              </div>
+            <table className='w-full'>
+              <tbody>
+                <tr className='flex flex-wrap justify-center'>
+                  <td className='w-1/6 font-bold border py-1'>Game-Code</td>
+                  <td className='w-1/4 font-bold border py-1'>Game-Name</td>
+                  <td className='w-1/6 font-bold border py-1'>Host</td>
+                  <td className='w-1/6 font-bold border py-1'>Player</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              {data
+                .filter((item) => {
+                  return search.toLowerCase() === ''
+                    ? item
+                    : item.gamename.toLowerCase().includes(search)
+                })
+                .map((item) => (
+                  <FilterHandler key={item.id} props={item} />
+                ))}
             </div>
           </div>
         </article>
