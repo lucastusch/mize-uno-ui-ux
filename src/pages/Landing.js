@@ -54,7 +54,6 @@ const FilterHandler = (props) => {
   const items = props.props
   if (items.id % 2 === 0) {
     return (
-      // strange solution => must appear as a table
       <table key={items.id} className='flex flex-wrap justify-center w-full'>
         <tbody key={items.id} className='flex flex-wrap justify-center w-full'>
           <tr key={items.id} className='flex flex-wrap justify-center w-full'>
@@ -75,7 +74,6 @@ const FilterHandler = (props) => {
       </table>
     )
   } else {
-    // strange solution => must appear as a table
     return (
       <table key={items.id} className='flex flex-wrap justify-center w-full'>
         <tbody key={items.id} className='flex flex-wrap justify-center w-full'>
