@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import Navbarscrolls from './Navbarscrolls'
 
-const unologo =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/UNO_Logo.svg/2560px-UNO_Logo.svg.png'
+const unologo = ''
 
 const Navbar = () => {
   return (
@@ -16,7 +15,11 @@ const Navbar = () => {
                 className='scale-90 hover:scale-100 duration-300'
               >
                 <Link to='/'>
-                  <img src={unologo} alt='logo' className='h-16 w-[h*1.43]' />
+                  <img
+                    src={unologo}
+                    alt='uno-logo'
+                    className='h-16 w-[h*1.43]'
+                  />
                 </Link>
               </button>{' '}
               <Navbarscrolls highlighted='games' />

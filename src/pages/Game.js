@@ -3,7 +3,7 @@ const pr = console.log
 
 // just a temporary solution - want to handle this dynamic
 const gamebg =
-  'https://1.bp.blogspot.com/-CUGrjTz--uk/YKexcWh29nI/AAAAAAAAh4M/HslKXMPNl7AI42WH7sNMKMgjkS_KJLSoQCLcBGAsYHQ/s1920/V1-CUTE-TROPICAL-DESKTOP-WALLPAPER-HD.png'
+  'https://images.unsplash.com/photo-1605523741183-8e5b71295edb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'
 
 // just as an example [sewi backend]
 const player_data = [

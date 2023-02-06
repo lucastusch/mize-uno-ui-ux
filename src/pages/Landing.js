@@ -5,7 +5,7 @@ import Navbar from '../components-landing/Navbar'
 import Footer from '../components-landing/Footer'
 
 const unoongoinggame =
-  'https://www.thesprucecrafts.com/thmb/W7vX1ntLjL6UksyxBXmFFIcB4Ak=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-play-uno-4169919-hero-2c26a4843b9d4d908e760df80687e445.jpg'
+  'https://images.unsplash.com/photo-1605523741183-8e5b71295edb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80'
 
 const searchlens = (
   <svg
